@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+// 引入路由
+import router from './router'
 // 关闭语法检查
 Vue.config.productionTip = false
 
@@ -16,4 +18,5 @@ Vue.component('Footer', Footer)
 
 new Vue({
   render: h => h(App),
+  router,
 }).$mount('#app')

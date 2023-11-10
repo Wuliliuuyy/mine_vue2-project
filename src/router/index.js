@@ -14,25 +14,43 @@ import Search from '../pages/search/Search.vue'
 import Login from '../pages/login/Login.vue'
 import Register from '../pages/register/Register.vue'
 
+// 创建路由并暴露
 export default new VueRouter({
   mode: 'hash',
   routes: [
     // 一级路由
     {
       path: '/home',
-      component: Home
+      component: Home,
+      meta: {
+        Isdisplay: true
+      }
     },
     {
       path: '/search',
-      component: Search
+      component: Search,
+      meta: {
+        Isdisplay: true
+      }
     },
     {
       path: '/login',
-      component: Login
+      component: Login,
+      meta: {
+        Isdisplay: false
+      }
     },
     {
       path: '/register',
-      component: Register
+      component: Register,
+      meta: {
+        Isdisplay: false
+      }
     },
+    {
+      // 重定向到home组件
+      path: '/',
+      redirect: '/home',
+    }
   ]
 })
